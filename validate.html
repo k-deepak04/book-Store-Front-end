@@ -1,0 +1,187 @@
+<html>
+<head>
+
+<script>
+
+function validate()
+{
+var n=document.getElementById("name");
+var m=document.getElementById("mobile");
+var e=document.getElementById("email");
+var p=document.getElementById("pin");
+
+
+var patt_name=/(^[A-Za-z]+\s[A-Za-z]+$)/;
+var patt_mobile=/^[1-9][0-9]{9}/;
+var patt_email=/^([A-za-z0-9\.-]+)@([A-za-z0-9-]+).([a-z]{2,3})$/;
+var patt_pin=/^[0-9]{6}/;
+if(n.value=="")
+{
+alert("Enter your name");
+n.style.border="2px solid red";
+
+return false;
+}
+else 
+{
+	if(m.value==""){
+	alert("Enter the mobile number");
+	m.style.border="2px solid red";
+	return false;
+	}
+	else
+	{
+		if(e.value==""){
+		alert("Enter the correct email");
+		e.style.border="2px solid red";
+		return false;
+		}
+	else
+	{
+		if(p.value==""){
+		alert("Please enter the pin code");
+		e.style.border="2px solid red";
+		return false;
+	}
+		else{
+			  if(patt_pin.test(p.value))
+			  {
+				if(patt_name.test(n.value))
+				{
+					if(patt_mobile.test(m.value))
+					{
+						if(patt_email.test(e.value))
+						{
+						alert("Data Submitted");
+						return true;
+						}
+						else{
+							alert("Email is not correct");
+							e.style.border="2px solid red";
+							return false;
+							}
+					
+					}
+					else{
+					alert("Mobile number is not correct");
+					m.style.border="2px solid red";
+					return false;
+					}
+				}
+				else{
+					alert("Name is not correct");
+					n.style.border="2px solid red";
+					return false;
+					}
+			  }
+					else{
+						alert("Pin code is not correct");
+					n.style.border="2px solid red";
+					return false;
+				    }	
+			}
+	}
+}
+
+
+}
+</script>
+<link rel="stylesheet" href="style.css"/>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+</head>
+<style>
+.box{
+	box-shadow:  0px 0px 10px 2px black;
+	width: 600px;
+	height: 600px;
+	padding: 20px;
+	margin: 100px auto;
+	border: 10px;
+	text-align:center ;
+	background-color:#b8faef;
+	color: black;
+}
+.sub{
+	border-radius: 20px;
+	background-color: #40514e;
+        color: aqua;
+        padding: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+}
+</style>
+<body background="book.jpg">
+	<div class="box-nav">
+		<header>
+			<div class="wrapper">
+				<div class="logo">
+				 <a class="" > Garden of Words</a>
+			
+				</div>
+				 <nav>
+					<a class="one" href="file:///C:/Users/LENOVO/Desktop/cws%203/frame11.html">Best Seller</a>
+					 <a class="one" href="file:///C:/Users/LENOVO/Desktop/cws%203/frame11.html">Children's Book</a>
+					 <a class="one" href="file:///C:/Users/LENOVO/Desktop/cws%203/frame11.html">About Us</a>
+					 <a class="one" href="file:///C:/Users/LENOVO/Desktop/cws%203/frame11.html">Manga</a>
+					 <a class="one" href="file:///C:/Users/LENOVO/Desktop/cws%203/frame11.html">Contact Info.</a>
+					 <a class="one" href="file:///C:/Users/LENOVO/Desktop/cws%203/form.html">Sign in</a>
+					</nav>
+				 
+			</div>
+		</header>
+	 </div>  <br>
+	 <div class="box">
+<H1>Customer Order</H1>
+<br><br>
+<form name="fname" onsubmit="return validate()" action="mailto:deepkushwah786@gmail.com" method="post" >
+	<table cellspacing="30px" style="align-self: center;">
+<tr>	
+<td> Name: </td>
+<td> <input  type="text" name="fname" id="name" > </td>
+<td> Address:</td>
+	  <td> <textarea></textarea></td>
+</tr>
+<tr>
+	<td>Mobile no.:
+		<td><input type="text" name="mobile" id="mobile" maxlength="10">
+			<td> Pin Code: </td>
+			<td> <input  type="text" name="fpin" id="pin" > </td>		
+</tr>
+<tr>
+<td>Email:</td> 
+	<td><input type="text" name="email" id="email"></td>
+	<td> State: </td>
+		<td>	<select name="list" size="5" >
+				<option> Maharashtra</option>
+				<option> Uttarpradesh</option>
+				<option> Karnataka</option>
+				<option> Madhyapradesh</option>
+				<option> Bengal</option>
+				</select></td>
+	</tr>
+	<tr>
+		<td>Your Order: </td>
+		<td><textarea></textarea></td>
+		<td> Personal Comment:</td>
+	  <td> <textarea></textarea></td>
+	</tr>
+	<tr>
+      <td rowspan="3">Type Of delivery:</td> 
+	  <td rowspan="3">Mailed orders<input type="radio" name="delivery type"><br>
+	  Prepaid pickups<input type="radio" name="delivery type"><br>
+	   Reservation<input type="radio" name="delivery type"></td>
+	   <td rowspan="3">Gender:</td> 
+	  <td rowspan="3">Male<input type="radio" name="delivery type"><br>
+	  Female<input type="radio" name="delivery type"><br>
+	  Rather not say<input type="radio" name="delivery type"></td>
+	</tr> 
+	
+	</table>
+	
+  <input class="sub" type="submit" value="SUBMIT" > &nbsp; &nbsp; &nbsp;
+  <input class="sub" type="reset" value="RESET" >
+</form>
+	 </div>
+</body>
+</html>

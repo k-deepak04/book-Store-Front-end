@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <script>
+        function clr(){
+        document.getElementById("display").value="";
+        }
+        function data(val){
+        document.getElementById("display").value+=val;
+        }
+        function calculate(){
+        var x=document.getElementById("display").value; 
+        document.getElementById("display").value=eval(x);
+        }
+        
+        </script>
+        <style>
+            .box{
+                box-shadow:  0px 0px 10px 2px black;
+	            width: 400px;
+	            height: 400px;
+	            padding: 30px;
+	            margin: 100px auto;
+	            border: 10px;
+	            text-align:center ;
+	            background-color:#c4faf1;
+	            color: black;
+            }
+            input[type="button"]{
+                position: relative;
+                width: 48px;
+                height: 42px;
+             border-radius: 50px;
+            background-color:rgb(245, 244, 244);
+            color:black;
+            border-color:black;
+            width:100%;
+            box-shadow:  0px 0px 10px 2px rgb(102, 101, 101);
+    
+              }
+            .display{
+                height: 42px;
+                border-radius: 50px;
+                background-color: white;
+                border-color:black;
+                box-shadow:  0px 0px 10px 2px rgb(102, 101, 101);
+            }
+            h1{
+                color: white;
+            }
+        </style>
+    <body class="box" background="sky_lanterns_by_wlop_d7b5nfg-fullview.jpg">
+        <div>
+            <center>
+            <h1>Calculator</h1>
+            <table>
+            <tr>
+            <td><input type="button" value="C" onclick="clr()" style="padding-left:20px;padding-right:20px"></td>
+            <td colspan="3"><input class="display" type="text" id="display" placeholder="value..." disabled></td>
+            </tr>
+            
+            <tr>
+            <td><input type="button" value="+" onclick="data('+')"></td>
+            <td><input type="button" value="1" onclick="data('1')"></td> 
+            <td><input type="button" value="2" onclick="data('2')"></td>
+            <td><input type="button" value="3" onclick="data('3')"></td>
+            </tr>
+            
+            <tr>
+            <td><input type="button" value="-" onclick="data('-')"></td>
+            <td><input type="button" value="4" onclick="data('4')"></td>
+            <td><input type="button" value="5" onclick="data('5')"></td>
+            <td><input type="button" value="6" onclick="data('6')"></td>
+            </tr>
+            
+            <tr>
+            <td><input type="button" value="*" onclick="data('*')"></td>
+            <td><input type="button" value="7" onclick="data('7')"></td>
+            <td><input type="button" value="8" onclick="data('8')"></td>
+            <td><input type="button" value="9" onclick="data('9')"></td>
+            </tr>
+            
+            <tr>
+            <td><input type="button" value="/" onclick="data('/')"></td>
+            <td><input type="button" value="." onclick="data('.')"></td>
+            <td><input type="button" value="0" onclick="data('0')"></td>
+            <td><input type="button" value="=" onclick="calculate()"></td>
+            </tr> 
+            </table>
+        </center>
+        
+    </body>
+</html>
